@@ -1,0 +1,39 @@
+{
+  "name": "Devhub",
+  "component": false,
+  "license_url": null,
+  "about_url": null,
+  "authors": null,
+  "theme_version": null,
+  "minimum_discourse_version": null,
+  "maximum_discourse_version": null,
+  "assets": {
+  },
+  "color_schemes": {
+  },
+  "modifiers": {
+  },
+  "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966"
+}
+
+{
+  "name": "footer",
+  "component": true,
+  "license_url": null,
+  "about_url": null,
+  "authors": null,
+  "theme_version": null,
+  "minimum_discourse_version": null,
+  "maximum_discourse_version": null,
+  "assets": {
+    "banner": "assets/banner.png",
+    "right": "assets/right.png",
+    "v0_101": "assets/v0_101.png",
+    "v0_45": "assets/v0_45.png"
+  },
+  "color_schemes": {
+  },
+  "modifiers": {
+  },
+  "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966"
+}
