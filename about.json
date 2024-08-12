@@ -8,32 +8,38 @@
   "minimum_discourse_version": null,
   "maximum_discourse_version": null,
   "assets": {
+    // You can include assets for the main theme here
   },
   "color_schemes": {
+    // Color schemes for the main theme here
   },
   "modifiers": {
+    // Modifiers for the main theme here
   },
-  "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966"
-}
-
-{
-  "name": "footer",
-  "component": true,
-  "license_url": null,
-  "about_url": null,
-  "authors": null,
-  "theme_version": null,
-  "minimum_discourse_version": null,
-  "maximum_discourse_version": null,
-  "assets": {
-    "banner": "assets/banner.png",
-    "right": "assets/right.png",
-    "v0_101": "assets/v0_101.png",
-    "v0_45": "assets/v0_45.png"
-  },
-  "color_schemes": {
-  },
-  "modifiers": {
-  },
+  "components": [
+    {
+      "name": "footer",
+      "component": true,
+      "license_url": null,
+      "about_url": null,
+      "authors": null,
+      "theme_version": null,
+      "minimum_discourse_version": null,
+      "maximum_discourse_version": null,
+      "assets": {
+        "banner": "assets/banner.png",
+        "right": "assets/right.png",
+        "v0_101": "assets/v0_101.png",
+        "v0_45": "assets/v0_45.png"
+      },
+      "color_schemes": {
+        // Color schemes for the footer component here
+      },
+      "modifiers": {
+        // Modifiers for the footer component here
+      },
+      "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966"
+    }
+  ],
   "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966"
 }
