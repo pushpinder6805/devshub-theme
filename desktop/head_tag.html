@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Horizontal Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-200">
+
+    <nav class="bg-black text-white relative z-10">
+        <ul class="flex flex-wrap justify-center p-4 space-x-4">
+            <li>
+                <a href="#" class="block hover:bg-gray-800 p-2 rounded">About us</a>
+            </li>
+            <li>
+                <a href="#" class="block hover:bg-gray-800 p-2 rounded">Why</a>
+            </li>
+            <li>
+                <a href="#" class="block hover:bg-gray-800 p-2 rounded">FAQ</a>
+            </li>
+            <li>
+                <a href="#" class="block hover:bg-gray-800 p-2 rounded">Help</a>
+            </li>
+
+            <li class="relative">
+                <button id="resumeBuilderButton" class="block hover:bg-gray-800 p-2 rounded">Resume Builder</button>
+                <ul id="resumeBuilderMenu" class="hidden absolute bg-black rounded-lg top-full left-0 mt-1 w-48 z-20">
+                    <li class="hover:bg-gray-800 p-2 rounded"><a href="#">Create Resume</a></li>
+                    <li class="hover:bg-gray-800 p-2 rounded"><a href="#">Manage Resume</a></li>
+                </ul>
+            </li>
+
+            <li class="relative">
+                <button id="communitiesButton" class="block hover:bg-gray-800 p-2 rounded">Communities</button>
+                <ul id="communitiesMenu" class="hidden absolute bg-black rounded-lg top-full left-0 mt-1 w-48 z-20">
+                    <li class="hover:bg-gray-800 p-2 rounded"><a href="#">Community Guidelines</a></li>
+                    <li class="hover:bg-gray-800 p-2 rounded"><a href="#">Code of Conduct</a></li>
+                    <li class="hover:bg-gray-800 p-2 rounded"><a href="#">Join as Moderator</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#" class="block hover:bg-gray-800 p-2 rounded">Feedback</a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        document.getElementById('resumeBuilderButton').addEventListener('click', function() {
+            const menu = document.getElementById('resumeBuilderMenu');
+            menu.classList.toggle('hidden');
+        });
+
+        document.getElementById('communitiesButton').addEventListener('click', function() {
+            const menu = document.getElementById('communitiesMenu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close submenu if clicked outside
+        window.addEventListener('click', function(e) {
+            const resumeButton = document.getElementById('resumeBuilderButton');
+            const communitiesButton = document.getElementById('communitiesButton');
+            const resumeMenu = document.getElementById('resumeBuilderMenu');
+            const communitiesMenu = document.getElementById('communitiesMenu');
+            
+            if (!resumeButton.contains(e.target) && !resumeMenu.contains(e.target)) {
+                resumeMenu.classList.add('hidden');
+            }
+
+            if (!communitiesButton.contains(e.target) && !communitiesMenu.contains(e.target)) {
+                communitiesMenu.classList.add('hidden');
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get all submenu toggles
+        const submenuToggles = document.querySelectorAll('.submenu-toggle');
+    
+        submenuToggles.forEach(toggle => {
+            toggle.addEventListener('click', function () {
+                // Toggle active class on clicked submenu
+                this.classList.toggle('submenu-active');
+                // Toggle rotation on chevron icon
+                const chevron = this.querySelector('i.fa-chevron-down');
+                if (chevron) {
+                    chevron.classList.toggle('rotate-180');
+                }
+            });
+        });
+    });
+    </script>
+
+<script type="text/x-handlebars" data-template-name="connectors/above-main-container/custom-html">
+    <div class="custom-banner1">
+    <div class="bg-gray-100">
+        <div class="min-h-screen flex">
+            <!-- Sidebar -->
+            <div class="w-64 bg-white shadow-md">
+                <ul class="mt-6">
+                    <li class="flex items-center hover:bg-gray-200 cursor-pointer">
+                        <i class="fas fa-home fa-icon"></i>
+                        <a href="#" class="text-gray-8001">Home</a>
+                    </li>
+                    <li class="flex items-center hover:bg-gray-200 cursor-pointer">
+                        <i class="fas fa-clipboard fa-icon"></i>
+                        <a href="#" class="text-gray-8001">My Posts</a>
+                    </li>
+                    <li class="submenu-toggle submenu-active">
+                        <div class="flex items-center hover:bg-gray-200 cursor-pointer">
+                            <i class="fas fa-network-wired fa-icon"></i>
+                            <span class="flex-grow text-gray-8001">Hubs</span>
+                            <i class="fas fa-chevron-down rotate-180"></i>
+                        </div>
+                        <ul class="submenu">
+                            <li class="submenu-toggle">
+                                <div class="flex items-center hover:bg-gray-200 cursor-pointer">
+                                    <a href="#" class="flex-grow text-gray-8001">Hub 1</a>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <ul class="submenu">
+                                    <li class="flex items-center hover:bg-gray-200 cursor-pointer"><i class="fas fa-sitemap fa-icon"></i><a href="#">Sub-Hub 1.1</a></li>
+                                    <li class="flex items-center hover:bg-gray-200 cursor-pointer"><i class="fas fa-sitemap fa-icon"></i><a href="#">Sub-Hub 1.2</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu-toggle">
+                                <div class="flex items-center hover:bg-gray-200 cursor-pointer">
+                                    <a href="#" class="flex-grow text-gray-8001">Hub 2</a>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <ul class="submenu">
+                                    <li class="flex items-center hover:bg-gray-200 cursor-pointer"><i class="fas fa-sitemap fa-icon"></i><a href="#">Sub-Hub 2.1</a></li>
+                                    <li class="flex items-center hover:bg-gray-200 cursor-pointer"><i class="fas fa-sitemap fa-icon"></i><a href="#">Sub-Hub 2.2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="flex items-center hover:bg-gray-200 cursor-pointer">
+                        <i class="fas fa-question-circle fa-icon"></i>
+                        <a href="#" class="text-gray-8001">Questions</a>
+                    </li>
+                    <li class="submenu-toggle">
+                        <div class="flex items-center hover:bg-gray-200 cursor-pointer">
+                            <i class="fas fa-tags fa-icon"></i>
+                            <span class="flex-grow text-gray-8001">Tags</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <ul class="submenu">
+                            <li class="flex items-center hover:bg-gray-200 cursor-pointer"><i class="fas fa-tag fa-icon"></i><a href="#">Tag 1</a></li>
+                            <li class="flex items-center hover:bg-gray-200 cursor-pointer"><i class="fas fa-tag fa-icon"></i><a href="#">Tag 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="flex items-center hover:bg-gray-200 cursor-pointer">
+                        <i class="fas fa-file-alt fa-icon"></i>
+                        <a href="#" class="text-gray-8001">Drafts</a>
+                    </li>
+                    <li class="flex items-center hover:bg-gray-200 cursor-pointer">
+                        <i class="fas fa-users fa-icon"></i>
+                        <a href="#" class="text-gray-8001">Users</a>
+                    </li>
+                    <li class="submenu-toggle">
+                        <div class="flex items-center hover:bg-gray-200 cursor-pointer">
+                            <i class="fas fa-building fa-icon"></i>
+                            <span class="flex-grow text-gray-8001">Companies</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <ul class="submenu">
+                            <li class="flex items-center hover:bg-gray-200 cursor-pointer"><i class="fas fa-briefcase fa-icon"></i><a href="#">Jobs</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu-toggle">
+                        <div class="flex items-center hover:bg-gray-200 cursor-pointer">
+                            <i class="fas fa-envelope fa-icon"></i>
+                            <span class="flex-grow text-gray-8001">Messages</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <ul class="submenu">
+                            <li class="flex items-center hover:bg-gray-200 cursor-pointer"><i class="fas fa-inbox fa-icon"></i><a href="#">Inbox</a></li>
+                            <li class="flex items-center hover:bg-gray-200 cursor-pointer"><i class="fas fa-edit fa-icon"></i><a href="#">New</a></li>
+                            <li class="flex items-center hover:bg-gray-200 cursor-pointer"><i class="fas fa-envelope-open fa-icon"></i><a href="#">Unread</a></li>
+                            <li class="flex items-center hover:bg-gray-200 cursor-pointer"><i class="fas fa-paper-plane fa-icon"></i><a href="#">Sent</a></li>
+                            <li class="flex items-center hover:bg-gray-200 cursor-pointer"><i class="fas fa-archive fa-icon"></i><a href="#">Archive</a></li>
+                        </ul>
+                    </li>
+                    <li class="flex items-center hover:bg-gray-200 cursor-pointer">
+                        <i class="fas fa-comments fa-icon"></i>
+                        <a href="#" class="text-gray-8001">Discussions</a>
+                    </li>
+                    <li class="flex items-center hover:bg-gray-200 cursor-pointer">
+                        <i class="fas fa-file-alt fa-icon"></i>
+                        <a href="#" class="text-gray-8001">Articles</a>
+                    </li>
+                    <li class="submenu-toggle">
+                        <div class="flex items-center hover:bg-gray-200 cursor-pointer">
+                            <i class="fas fa-file-alt fa-icon"></i>
+                            <span class="flex-grow text-gray-8001">Resume Builder</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <ul class="submenu">
+                            <li class="flex items-center hover:bg-gray-200 cursor-pointer"><i class="fas fa-file-upload fa-icon"></i><a href="#">Create Resume</a></li>
+                            <li class="flex items-center hover:bg-gray-200 cursor-pointer"><i class="fas fa-file-edit fa-icon"></i><a href="#">Update Resume</a></li>
+                        </ul>
+                    </li>
+                    <li class="flex items-center hover:bg-gray-200 cursor-pointer">
+                        <i class="fas fa-briefcase fa-icon"></i>
+                        <a href="#" class="text-gray-8001">Use Cases</a>
+                    </li>
+                    <li class="flex items-center hover:bg-gray-200 cursor-pointer">
+                        <i class="fas fa-calendar-alt fa-icon"></i>
+                        <a href="#" class="text-gray-8001">Events</a>
+                    </li>
+                    <li class="flex items-center hover:bg-gray-200 cursor-pointer">
+                        <i class="fas fa-bell fa-icon"></i>
+                        <a href="#" class="text-gray-8001">Bulletins</a>
+                    </li>
+                    <li class="submenu-toggle">
+                        <div class="flex items-center hover:bg-gray-200 cursor-pointer">
+                            <i class="fas fa-ellipsis-h fa-icon"></i>
+                            <span class="flex-grow text-gray-8001">More</span>
+                            <i class="fas fa-chevron-down rotate-180"></i>
+                        </div>
+                        <ul class="submenu">
+                            <li class="flex items-center hover:bg-gray-200 cursor-pointer"><i class="fas fa-info-circle fa-icon"></i><a href="#">About</a></li>
+                            <li class="flex items-center hover:bg-gray-200 cursor-pointer"><i class="fas fa-question fa-icon"></i><a href="#">FAQs</a></li>
+                            <li class="flex items-center hover:bg-gray-200 cursor-pointer"><i class="fas fa-users fa-icon"></i><a href="#">Groups</a></li>
+                            <li class="flex items-center hover:bg-gray-200 cursor-pointer"><i class="fas fa-award fa-icon"></i><a href="#">Badges</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    </script>

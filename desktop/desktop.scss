@@ -1,5 +1,71 @@
+//custom-sidebar-start//
+.custom-banner1 .submenu {
+    display: none;
+}
 
+.custom-banner1 .submenu-active > .submenu {
+    display: block;
+}
 
+.custom-banner1 .rotate-180 {
+    transform: rotate(180deg);
+}
+
+.custom-banner1 .fa-icon {
+    color: blue; /* Icon color blue */
+}
+
+.custom-banner1 ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+}
+.custom-banner1 li {
+    display: block;
+    padding: 12px 16px;
+}
+
+.custom-banner1 a {
+    text-decoration: none;
+    color: #1F2937;
+    margin-left: 8px;
+    flex-grow: 1;
+}
+
+.custom-banner1 .submenu {
+    padding-left: 24px;
+}
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+.custom-banner1 .flex {
+    display: flex;
+    align-items: center;
+}
+
+.custom-banner1 .submenu li {
+    display: block;
+}
+.submenu {
+    display: none;
+}
+.text-gray-8001{
+    font-size: 18px;
+}
+.custom-banner1 {
+    position: absolute;
+    left: 4px;
+    top: 50px;
+}
+
+.banner-box {
+    margin-left: 57px;
+}
+    .container {
+        margin-left: 63px;
+    }
+
+#main-outlet-wrapper {
+    margin-left: 170px;
+}
+//custom-sidebar-end//
 .category-boxes .category-box>a {
     background-color: #4949FC;
     border-radius: 5px;
